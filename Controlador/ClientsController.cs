@@ -38,7 +38,6 @@ namespace Controlador
 
                 this.comando.ExecuteNonQuery();
 
-
                 this.conexion.Close();
                 this.conexion.Dispose();
                 this.comando.Dispose();
@@ -68,7 +67,7 @@ namespace Controlador
                 this.comando.Connection = this.conexion;
 
                 // Definimos el texto el comando, en este caso es un procedimiento almacenado
-                this.comando.CommandText = "[Sp_Cns_Usuarios]";
+                this.comando.CommandText = "[Sp_Cns_Cliente]";
 
                 // Indicar el tipo de comando
                 this.comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -94,9 +93,9 @@ namespace Controlador
                         lector.GetValue(1).ToString(),
                         lector.GetValue(2).ToString(),
                         lector.GetValue(3).ToString(),
-                        lector.GetValue(2).ToString(),
-                        lector.GetValue(2).ToString(),
-                        lector.GetValue(2).ToString());
+                        lector.GetValue(4).ToString(),
+                        lector.GetValue(5).ToString(),
+                        lector.GetValue(6).ToString());
                 }
                 else
                 {

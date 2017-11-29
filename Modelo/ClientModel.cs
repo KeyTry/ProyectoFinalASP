@@ -12,17 +12,18 @@ namespace Modelo
         //private char payMethod;
         public ClientModel(string pId, string pEmail, string pName, string pPhone, string pPassword, string pAddress, string pUbication)
         {
-            this.email = pEmail;
             this.Id = pId;
+            this.email = pEmail;
             this.Name = pName;
             this.Phone = pPhone;
+            this.password = pPassword;
             this.Address = pAddress;
             this.Ubication = pUbication;
             //this.PayMethod = pPayMethod;
         }
 
         public string Id { get => id; set => id = value; }
-        public string Email { get => id; set => id = value; }
+        public string Email { get => email; set => email = value; }
         public string Name { get => name; set => name = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Password { get => password; set => password = value; }

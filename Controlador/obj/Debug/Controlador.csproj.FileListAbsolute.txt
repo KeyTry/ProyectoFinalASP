@@ -6,3 +6,11 @@ c:\users\emaaa\source\repos\ProyectoFinal\Controlador\obj\Debug\Controlador.cspr
 c:\users\emaaa\source\repos\ProyectoFinal\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
 c:\users\emaaa\source\repos\ProyectoFinal\Controlador\obj\Debug\Controlador.dll
 c:\users\emaaa\source\repos\ProyectoFinal\Controlador\obj\Debug\Controlador.pdb
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\bin\Debug\Controlador.dll
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\bin\Debug\Controlador.pdb
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\bin\Debug\Modelo.dll
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\bin\Debug\Modelo.pdb
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\obj\Debug\Controlador.csprojResolveAssemblyReference.cache
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\obj\Debug\Controlador.dll
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Controlador\obj\Debug\Controlador.pdb

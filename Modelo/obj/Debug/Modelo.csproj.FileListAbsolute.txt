@@ -4,3 +4,9 @@ c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.csprojResolveA
 c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.dll
 c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.pdb
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Modelo\bin\Debug\Modelo.dll
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Modelo\bin\Debug\Modelo.pdb
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Modelo\obj\Debug\Modelo.dll
+C:\Users\sqdan\Documents\Visual Studio 2017\Projects\ProyectoFinal\Modelo\obj\Debug\Modelo.pdb

@@ -12,6 +12,7 @@ drop  table [Tbl_Clientes]
 go
 create table [Tbl_Clientes](
 idCliente  varchar(100) not null primary key,
+email varchar(100) not null,
 nombre varchar(100) not null,
 telefono varchar(15),
 password varchar(max)not null,
@@ -20,15 +21,16 @@ ubicacion varchar(100))
 go
 create procedure [Sp_Ins_Clientes](
 @idCliente varchar(100),
+@email varchar(100),
 @nombre varchar(100),
 @telefono varchar(15),
 @password varchar(max),
 @direccion varchar(max),
 @ubicacion varchar(100))
 as
-insert into Tbl_Clientes(idCliente,nombre,telefono,
+insert into Tbl_Clientes(idCliente,email,nombre,telefono,
 password,direccion,ubicacion )
-values(@idCliente,@nombre,@telefono,@password,@direccion,@ubicacion)
+values(@idCliente,@email,@nombre,@telefono,@password,@direccion,@ubicacion)
 go
 if exists(select name from dbo.sysobjects where name ='Tbl_Motos')
 drop table [Tbl_Motos]
@@ -80,3 +82,13 @@ order  by  modelo
 go
 exec [Cons_Moto_Tipo] Pandillera
 go
+SELECT * FROM Tbl_Clientes;
+go
+EXEC Sp_Ins_Clientes '324','toor@gmail.com','Toor','43787578','root','Heredia','lolidk'
+go
+CREATE PROCEDURE [Sp_Cns_Cliente](@email varchar(100))
+as
+SELECT idCliente,email,nombre,telefono,password,direccion,ubicacion FROM Tbl_Clientes
+WHERE email = @email
+go
+EXEC Sp_Cns_Cliente 'toor@gmail.com'
