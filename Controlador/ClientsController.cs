@@ -29,6 +29,7 @@ namespace Controlador
                 this.comando.CommandText = "[Sp_Ins_Clientes]";
                 this.comando.CommandType = System.Data.CommandType.StoredProcedure;
                 this.comando.Parameters.AddWithValue("@idCliente", client.Id);
+                this.comando.Parameters.AddWithValue("@email",client.Email);
                 this.comando.Parameters.AddWithValue("@nombre", client.Name);
                 this.comando.Parameters.AddWithValue("@telefono", client.Phone);
                 this.comando.Parameters.AddWithValue("@password", client.Password);

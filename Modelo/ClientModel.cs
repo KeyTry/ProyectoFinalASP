@@ -8,10 +8,11 @@ namespace Modelo
 {
     public class ClientModel
     {
-        private string id, name, phone, password, address, ubication;
+        private string id, email, name, phone, password, address, ubication;
         //private char payMethod;
-        public ClientModel(string pId, string pName, string pPhone, string pPassword, string pAddress, string pUbication)
+        public ClientModel(string pId, string pEmail, string pName, string pPhone, string pPassword, string pAddress, string pUbication)
         {
+            this.email = pEmail;
             this.Id = pId;
             this.Name = pName;
             this.Phone = pPhone;
@@ -21,6 +22,7 @@ namespace Modelo
         }
 
         public string Id { get => id; set => id = value; }
+        public string Email { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Password { get => password; set => password = value; }
