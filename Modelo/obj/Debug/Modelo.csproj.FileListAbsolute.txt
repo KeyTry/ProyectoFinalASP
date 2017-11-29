@@ -1,0 +1,6 @@
+c:\users\emaaa\source\repos\ProyectoFinal\Modelo\bin\Debug\Modelo.dll
+c:\users\emaaa\source\repos\ProyectoFinal\Modelo\bin\Debug\Modelo.pdb
+c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.dll
+c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.pdb
