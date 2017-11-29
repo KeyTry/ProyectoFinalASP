@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -159,6 +159,7 @@ namespace ProyectoFinal
             clickedButton.Text = "Quitar Del Carrito";
             //clickedButton.CommandArgument;//De aca se obtiene el ID de la moto a comprar
             
+            CarritoController.CapturarProducto().Agregar(clickedButton.CommandArgument);
         }
     }
 }
