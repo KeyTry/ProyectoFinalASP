@@ -51,7 +51,7 @@
                     <a class="navbar-brand" runat="server" href="~/">Motos ACME</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav navbar-center">
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/ClientForm">Registrar Clientes</a></li>
                         <li><a runat="server" href="~/About">Acerca de</a></li>
@@ -63,6 +63,9 @@
                             </div>
                         </li>
                         <li><a runat="server" href="~/VerCarro.aspx">Carrito</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="social pull-right" ><a runat="server" href="~/VerCarro.aspx">Carrito</a></li>
                     </ul>
                 </div>
             </div>
