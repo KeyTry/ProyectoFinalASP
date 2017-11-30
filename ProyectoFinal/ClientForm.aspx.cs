@@ -100,15 +100,15 @@ namespace ProyectoFinal
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            //ClientsController clienteADO = new ClientsController(ConfigurationManager.ConnectionStrings["stringConexion"].ConnectionString);//PONER STRING DE CONEXION
+            ClientsController clienteADO = new ClientsController(ConfigurationManager.ConnectionStrings["Db_MotosConnectionString"].ConnectionString);//PONER STRING DE CONEXION
             try
             {
-                if (this.txtPassword.Text.Equals(this.txtConPassword))
+                if (this.txtPassword.Text.Equals(this.txtConPassword.Text))
                 {
                     var lat = Session["lat"];//recuperar Coordenadas
                     var lng = Session["lng"];
-                    ClientModel nuevoCliente = new ClientModel(this.txtId.Text, this.txtNombreCompleto.Text, txtPhone.Text, Crypto.HashPassword(this.txtPassword.Text), this.txtAddress.ToString(), "" + lat + "," + lng);
-
+                    ClientModel nuevoCliente = new ClientModel(this.txtId.Text,this.txtEmail.Text, this.txtNombreCompleto.Text, txtPhone.Text, Crypto.HashPassword(this.txtPassword.Text), this.txtAddress.ToString(), "" + lat + "," + lng);
+                    clienteADO.RegistrarCliente(nuevoCliente);
                     Response.Write("<script lenguaje ='javascript'> alert('Usuario Registrado, Gracias');</script>");
                 }
                 else
