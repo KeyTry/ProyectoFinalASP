@@ -5,30 +5,52 @@ using System.Text;
 using System.Threading.Tasks;
 using Modelo;
 using System.Data.SqlClient;
+using System.Web;
+using System.Configuration;
+using System.Web.UI.WebControls;
 
 namespace Controlador
 {
     public class CarritoController
     {
         public List<ProductosAlCarro> ListaProductos { get; private set; }
-        
-      public static CarroDeCompras CapturarProducto()
+        public string TipoPago { get => tipoPago; set => tipoPago = value; }
+        public string Banco { get; set; }
+        public string NumeroCheque { get; set; }
+
+        private VentasController ventaADO;
+
+        private string tipoPago;
+
+        public static CarritoController CapturarProducto()
         {
-            CarroDeCompras _carrito = (CarroDeCompras)HttpContext.Current.Session[“ASPCarroDeCompras”];
+            CarritoController _carrito = (CarritoController)HttpContext.Current.Session["ASPCarritoController"];
             if (_carrito == null)
             {
-                HttpContext.Current.Session[“ASPCarroDeCompras”] = _carrito = new CarroDeCompras();
+                HttpContext.Current.Session["ASPCarritoController"] = _carrito = new CarritoController();
             }
             return _carrito;
         }
-        protected CarroDeCompras()
+
+        public static void BorrarCarrito()
         {
+            HttpContext.Current.Session["ASPCarritoController"] = null;
+        }
+
+        protected CarritoController()
+        {
+
+            ventaADO = new VentasController(ConfigurationManager.ConnectionStrings["stringConexion"].ConnectionString);
             ListaProductos = new List<ProductosAlCarro>();
         }
-        
-      public void Agregar(int pIdProducto)
+
+        public void Agregar(string pIdProducto)
         {
-            ProductosAlCarro NuevoProducto = new ProductosAlCarro(pIdProducto);
+
+            MotoModel model = ventaADO.motoPorId(pIdProducto);
+
+            ProductosAlCarro NuevoProducto = new ProductosAlCarro(model);
+
             if (ListaProductos.Contains(NuevoProducto))
             {
                 foreach (ProductosAlCarro item in ListaProductos)
@@ -46,19 +68,23 @@ namespace Controlador
                 ListaProductos.Add(NuevoProducto);
             }
         }
-        public void EliminarProductos(int pIdProducto)
+        public void EliminarProductos(string pIdProducto)
         {
-            ProductosAlCarro eliminaritems = new ProductosAlCarro(pIdProducto);
+            MotoModel model = ventaADO.motoPorId(pIdProducto);
+
+            ProductosAlCarro eliminaritems = new ProductosAlCarro(model);
             ListaProductos.Remove(eliminaritems);
         }
-        public void CantidadDeProductos(int pIdProducto, int pCantidad)
+        public void CantidadDeProductos(string pIdProducto, int pCantidad)
         {
             if (pCantidad == 0)
             {
                 EliminarProductos(pIdProducto);
                 return;
             }
-            ProductosAlCarro updateProductos = new ProductosAlCarro(pIdProducto);
+            MotoModel model = ventaADO.motoPorId(pIdProducto);
+
+            ProductosAlCarro updateProductos = new ProductosAlCarro(model);
             foreach (ProductosAlCarro item in ListaProductos)
             {
                 if (item.Equals(updateProductos))
@@ -68,14 +94,39 @@ namespace Controlador
                 }
             }
         }
-        public decimal SubTotal()
+
+        public double SubTotal()
         {
-            decimal subtotal = 0;
+            double subtotal = 0;
+
             foreach (ProductosAlCarro item in ListaProductos)
             {
                 subtotal += item.Total;
             }
             return subtotal;
+        }
+
+        public double Total()
+        {
+            double total = SubTotal();
+
+            if (TipoPago == "EFECTIVO")
+            {
+                total = total - (total * 0.02);
+            }
+
+            double i = 0;
+            foreach (ProductosAlCarro item in ListaProductos)
+            {
+                i += item.Cantidad;
+                if (i >= 3)
+                {
+                    total = total - (total * 0.1);
+                    break;
+                }
+            }
+
+            return total;
         }
     }
 }

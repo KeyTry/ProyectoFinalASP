@@ -14,7 +14,7 @@ namespace ProyectoFinal
     {
         private string currentMotoType;
         protected void Page_Load(object sender, EventArgs e)
-        {      
+        {
             currentMotoType = "Pandilleras";//PUEDE QUE ESTO SE REINICIE EN EL POSTBACK PONERLE EL OJO!!!!!
 
         }
@@ -24,25 +24,21 @@ namespace ProyectoFinal
             {
                 VentasController ventaADO = new VentasController(ConfigurationManager.ConnectionStrings["stringConexion"].ConnectionString);
                 System.Data.DataSet motosTabla = ventaADO.motosPorTipo(tipoMotos);
-                MotoModel[] motos=new MotoModel[10];
+                MotoModel[] motos = new MotoModel[10];
                 string[] datos = new string[10];
-                for(int i=0; i < 10; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                        motos[i] = new MotoModel();
-                        motos[i].Model = motosTabla.Tables[0].Rows[i][0].ToString();
-                        motos[i].AnnoModelo = motosTabla.Tables[0].Rows[i][1].ToString();
-                        motos[i].MotorSize = motosTabla.Tables[0].Rows[i][2].ToString();
-                        motos[i].Cylinders = motosTabla.Tables[0].Rows[i][3].ToString();
-                        motos[i].MotorType = motosTabla.Tables[0].Rows[i][4].ToString();
-                        motos[i].Type = motosTabla.Tables[0].Rows[i][5].ToString();
-                        motos[i].ImgUrl = motosTabla.Tables[0].Rows[i][6].ToString();
-                        motos[i].Price = float.Parse(motosTabla.Tables[0].Rows[i][7].ToString());
-                 
-                        
-                    
-                        
+                    motos[i] = new MotoModel();
+                    motos[i].Model = motosTabla.Tables[0].Rows[i][0].ToString();
+                    motos[i].AnnoModelo = motosTabla.Tables[0].Rows[i][1].ToString();
+                    motos[i].MotorSize = motosTabla.Tables[0].Rows[i][2].ToString();
+                    motos[i].Cylinders = motosTabla.Tables[0].Rows[i][3].ToString();
+                    motos[i].MotorType = motosTabla.Tables[0].Rows[i][4].ToString();
+                    motos[i].Type = motosTabla.Tables[0].Rows[i][5].ToString();
+                    motos[i].ImgUrl = motosTabla.Tables[0].Rows[i][6].ToString();
+                    motos[i].Price = float.Parse(motosTabla.Tables[0].Rows[i][7].ToString());
+
                 }
-                
 
                 this.modelo1.InnerText = motos[0].Model;
                 this.annoModelo1.InnerText = motos[0].AnnoModelo;
@@ -127,8 +123,6 @@ namespace ProyectoFinal
 
         }
 
-       
-
         protected void btnCuadras_Click(object sender, EventArgs e)
         {
             cambiarTipoMotos("Cuadraciclo");
@@ -156,9 +150,9 @@ namespace ProyectoFinal
         protected void agregarACarritoCompra(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
-            clickedButton.Text = "Quitar Del Carrito";
+            //clickedButton.Text = "Quitar Del Carrito";
             //clickedButton.CommandArgument;//De aca se obtiene el ID de la moto a comprar
-            
+
             CarritoController.CapturarProducto().Agregar(clickedButton.CommandArgument);
         }
     }

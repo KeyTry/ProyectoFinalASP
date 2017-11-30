@@ -17,7 +17,7 @@ namespace Controlador
         {
             this.stringConexion = pStringConexion;
         }
-        
+
         public MotoModel[] Motos(string tipoMotos)
         {
 
@@ -47,7 +47,6 @@ namespace Controlador
                 this.conexion.Dispose();
                 this.comando.Dispose();
             }
-
             catch (Exception ex)
             {
                 throw ex;
@@ -81,5 +80,83 @@ namespace Controlador
                 throw ex;
             }
         }
+
+        public void Pagar(CarritoController carrito)
+        {
+            try
+            {
+                this.conexion = new SqlConnection(this.stringConexion);
+                this.conexion.Open();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexion;
+                this.comando.CommandText = "[Sp_Pagar_Factura]";
+                this.comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+                this.comando.Parameters.AddWithValue("@subTotal", carrito.SubTotal());
+                this.comando.Parameters.AddWithValue("@total", carrito.Total());
+
+                this.comando.Parameters.AddWithValue("@banco", carrito.Banco);
+                this.comando.Parameters.AddWithValue("@numeroCheque", carrito.NumeroCheque);
+
+
+                this.comando.ExecuteNonQuery();
+
+                this.conexion.Close();
+                this.conexion.Dispose();
+                this.comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public MotoModel motoPorId(string id)
+        {
+            MotoModel moto = new MotoModel();
+            try
+            {
+                this.conexion = new SqlConnection(this.stringConexion);
+                this.conexion.Open();
+                this.comando = new SqlCommand();
+                this.comando.Connection = this.conexion;
+                this.comando.CommandText = "[Sp_Ver_MotoPorId]";
+                this.comando.CommandType = System.Data.CommandType.StoredProcedure;
+                this.comando.Parameters.AddWithValue("@id", id);
+                SqlDataReader lector = null;
+
+                lector = this.comando.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    moto.Model = id;
+                    moto.AnnoModelo = lector.GetValue(0).ToString();
+                    moto.MotorSize = lector.GetValue(1).ToString();
+                    moto.Cylinders = lector.GetValue(2).ToString();
+                    moto.MotorType = lector.GetValue(3).ToString();
+                    moto.Type = lector.GetValue(4).ToString();
+                    moto.ImgUrl = lector.GetValue(5).ToString();
+                    moto.Price = float.Parse(lector.GetValue(6).ToString());
+
+                    lector.Close();
+                }
+                else
+                    throw new Exception("No existe ninguna moto con el ID #" + id);
+
+                lector = null;
+                conexion.Close();
+                conexion.Dispose();
+
+                return moto;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }

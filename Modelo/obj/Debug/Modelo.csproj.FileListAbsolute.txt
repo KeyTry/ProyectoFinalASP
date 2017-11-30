@@ -4,3 +4,8 @@ c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.csprojResolveA
 c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.dll
 c:\users\emaaa\source\repos\ProyectoFinal\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\Modelo\bin\Debug\Modelo.dll
+C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\Modelo\obj\Debug\Modelo.dll
+C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache

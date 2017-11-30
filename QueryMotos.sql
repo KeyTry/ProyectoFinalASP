@@ -80,3 +80,27 @@ order  by  modelo
 go
 exec [Cons_Moto_Tipo] Pandillera
 go
+
+create  procedure [Sp_Ver_MotoPorId](
+@id varchar(30))
+as
+select annoModelo,motorSize,cylinders,motorType, tipo,imgUrl,price
+from Tbl_Motos
+where modelo = @id
+go
+exec [Sp_Ver_MotoPorId] 'CB 190R'
+go
+
+create  procedure [Sp_Pagar_Factura](
+@subTotal double
+@total double,
+@banco varchar(50),
+@numeroCheque varchar(50),
+)
+as
+select annoModelo,motorSize,cylinders,motorType, tipo,imgUrl,price
+from Tbl_Motos
+where modelo = @id
+go
+exec [Sp_Ver_MotoPorId] 'CB 190R'
+go
