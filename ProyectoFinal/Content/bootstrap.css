@@ -3338,9 +3338,10 @@ input[type="button"].btn-block {
 
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
-  border-top: 0 dotted;
-  border-bottom: 4px solid #000000;
-  content: "";
+    border-top: 0 dotted;
+    border-bottom: 4px solid #e60000;
+    content: "";
+    background-color: #e60000;
 }
 
 .dropup .dropdown-menu,
@@ -3351,10 +3352,11 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 768px) {
-  .navbar-right .dropdown-menu {
-    right: 0;
-    left: auto;
-  }
+    .navbar-right .dropdown-menu {
+        right: 0;
+        left: auto;
+        
+    }
 }
 
 .btn-default .caret {
