@@ -11,7 +11,7 @@ namespace Controlador
     {
       
       
-      public void EnviarCorreo( string destino, string asunto, string contenido )
+      public static void EnviarCorreo( string destino, string asunto, string contenido )
     {
         /*-------------------------MENSAJE DE CORREO----------------------*/
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VerCarro.aspx.cs" Inherits="ProyectoFinal.VerCarro" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VerCarro.aspx.cs" Inherits="ProyectoFinal.VerCarro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -6,7 +6,6 @@
     <div class="jumbotron text-center">
         <h3>Carrito de compras</h3>
     </div>
-
     <asp:GridView runat="server" ID="gvCaritoCompras" AutoGenerateColumns="false" EmptyDataText="No hay nada en su carrito de compras."
         GridLines="None" Width="100%" CellPadding="5" ShowFooter="true" DataKeyNames="IdProducto"
         OnRowCommand="gvCaritoCompras_RowCommand" OnRowDataBound="gvCaritoCompras_RowDataBound">
@@ -60,6 +59,14 @@
             <div class="col-md-10" style="margin-top: 7px;">
                 <asp:Label ID="Cheque" runat="server" Text="Label"></asp:Label>
             </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <asp:Label Text="Numero de cheque" runat="server" class="control-label col-md-2"></asp:Label>
+        <div class="col-md-10" style="margin-top: 7px;">
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </div>
     </div>
 

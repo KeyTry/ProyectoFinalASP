@@ -207,3 +207,5 @@ C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\ProyectoFinal\bin\Micr
 C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\ProyectoFinal\bin\Microsoft.AI.Web.xml
 C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\ProyectoFinal\bin\es\System.Web.Optimization.resources.dll
 C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\ProyectoFinal\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\ProyectoFinal\bin\itextsharp.dll
+C:\Users\Tefa\Documents\ESTO NO ES PORNO\ProyectoFinalASP\ProyectoFinal\bin\itextsharp.xml
