@@ -1,11 +1,11 @@
 use [master]
 go
-if exists(select name from dbo.sysdatabases where name = 'Db_Motos')
-drop database [Db_Motos]
+if exists(select name from dbo.sysdatabases where name = 'Db_MotosAcme')
+drop database [Db_MotosAcme]
 go
-create database [Db_Motos]
+create database [Db_MotosAcme]
 go
-use [Db_Motos]
+use [Db_MotosAcme]
 go
 if exists(select name from dbo.sysobjects where name = 'Tbl_Usuarios')
 drop  table [Tbl_Clientes]
@@ -67,6 +67,17 @@ insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUr
 insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('CBF160F','2018', '150', '1', '4 tiempos', 'Pandillera', 'img/models/cb160-sm.jpg' ,1550000);
 insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('Shadow 150','2018', '150', '1', '4 tiempos', 'Pandillera', 'img/models/shadow150-sm.jpg' ,1295000);
 insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('Unicorn 160','2018', '150', '1', '4 tiempos', 'Pandillera', 'img/models/unicorn160-sm.jpg' ,1295000);
+go
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 FB','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 5100000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 FA','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 5550000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 FA2','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 6100000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 FA3','2017', '450', '1', '4 tiempos','Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 6150000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 FE','2017', '450', '1','4 tiempos','Cuadraciclo','img/models/trx-fourtrax-sm.jpg' , 400000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 TE','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 5100000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 TM','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 5500000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 TJ','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 5600000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 HE','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 6100000);
+insert into Tbl_Motos(modelo,annoModelo,motorSize,cylinders,motorType,tipo,imgUrl,price)values('TRX 420 LUX','2017', '450', '1', '4 tiempos', 'Cuadraciclo', 'img/models/trx-fourtrax-sm.jpg' , 7000000);
 go
 DROP PROCEDURE [Cons_Moto_Tipo]; 
 go
